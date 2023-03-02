@@ -6,9 +6,7 @@ import { convertDate } from "../data";
 function EventDetails() {
 
   let { name } = useParams();
-
-  const { event } = useContext(MyContext)
-
+  let { event } = useContext(MyContext)
   let navigate = useNavigate() 
   
 // returns the page to the previous

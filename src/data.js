@@ -4,9 +4,10 @@ import { useNavigate } from "react-router-dom";
 
 export async function getAllEvents() {
   const key = 'paBdVONZfprSreofrQSnKo4iCkCYpRB6'
- 
+
   const response = await fetch(
     `https://app.ticketmaster.com/discovery/v2/events.json?size=100&apikey=${key}`
+    // Another option to use attractions from TicketMaster with next link
     // `https://app.ticketmaster.com/discovery/v2/attractions.json?size=30&countryCode=US&apikey=${key}`
   );
   const data = response.json();
@@ -16,8 +17,8 @@ export async function getAllEvents() {
 export async function getAllCategories(category) {
   const key = 'paBdVONZfprSreofrQSnKo4iCkCYpRB6'
   const response = await fetch(
-   `https://app.ticketmaster.com/discovery/v2/events.json?segmentName=${category}&apikey=${key}`
-     );
+    `https://app.ticketmaster.com/discovery/v2/events.json?segmentName=${category}&apikey=${key}`
+  );
   const data = response.json();
   return data;
 
