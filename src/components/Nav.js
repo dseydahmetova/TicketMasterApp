@@ -2,15 +2,13 @@ import React from 'react'
 import { Link } from "react-router-dom"
 
 
-
-function Nav({eventType, setEventType}) {
+function Nav({setEventType}) {
 
   const handleChange = (event) => {
- 
-    setEventType(event.target.value);
- 
+ const type = event.target.value
+    setEventType(type);
+    window.open(`/events/${type}`);
   };
-  console.log("value " + eventType)
 
   return (
 <nav className="navbar navbar-expand-lg nav">
@@ -30,6 +28,10 @@ function Nav({eventType, setEventType}) {
         <li className="nav-item">
         <Link className="nav-link" to='/venues'>
         <div>Venue</div>
+
+      </Link>
+      <Link className="nav-link" to='/events/sports'>
+        <div>Sports</div>
 
       </Link>
         </li>
@@ -71,8 +73,7 @@ function Nav({eventType, setEventType}) {
 <select className="nav-link form-select-lg" aria-label="Default select example" onChange={handleChange}>
 <option className="dropdown-item" defaultValue value="Sports">Categories</option>
     <option value="Sports">Sports</option>
-          <option value="Concerts"> Concerts</option>
-          <option value="Comedy"> Comedy Shows</option>
+          <option value="Music"> Concerts</option>
           </select> 
           
           </li> 

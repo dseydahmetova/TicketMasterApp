@@ -19,7 +19,7 @@ function App() {
   const [event, setEvent] = useState([]);
   const [searchQuery, setSearchQuery] = useState([]);
   const [eventType, setEventType] = useState('');
-
+console.log("eve" + eventType)
 
   useEffect(() => {
     const EventsData = async () => {
@@ -56,8 +56,8 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/" element={<Eventboard searchQuery={searchQuery} setSearchQuery={setSearchQuery}/>} />
           <Route path="/events/:name" element={<EventDetails />} />
-          <Route path="/events/sports" element={<Sports />} />
-          <Route path="/events/concerts" element={<Concerts />} />
+          <Route path="/events/Sports" element={<Sports />} />
+          <Route path="/events/Music" element={<Concerts />} />
         </Routes>
       </div>
       <Footer />

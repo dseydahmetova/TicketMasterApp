@@ -5,13 +5,13 @@ import Event from '../components/Event';
 import { MyContextCategories } from "../context";
 
 
-function Sports() {
+function Concerts() {
     const [category, setCategory] = useState([]);
     const {eventType } = useContext(MyContextCategories)
 
     useEffect(() => {
       const CategoryData = async () => {
-        const eventData = await getAllCategories("Sports");
+        const eventData = await getAllCategories("Music");
         const allEvents = eventData._embedded.events
         const uniqueEvents = allEvents.reduce((accumulator, current) => {
           if (!accumulator.find((item) => item.name === current.name)) {
@@ -41,4 +41,4 @@ const content = result?.length ? result : <article><p>Sorry, No Matching Events<
   )
 }
 
-export default Sports
+export default Concerts
