@@ -14,7 +14,6 @@ function Event({event}) {
             <div className="col-md-7">
               <div className="card-body">
                   <h5 className="card-title" key={event.id}>  {event.name}</h5>
-                  {/* <p>{event.classifications[0].segment.name}/{event.classifications[0].genre.name}/{event.classifications[0].subGenre.name}</p> */}
                   <p className="card-text" key={event.dateTime}>Date:{` `} {event.dates.start.localDate}</p> 
                   <p>Time:{` `}{event.dates.start.localTime}</p>
                   {event.priceRanges && <h6 className="card-text" > From ${event.priceRanges[0].min} {event.priceRanges[0].currency}</h6>}

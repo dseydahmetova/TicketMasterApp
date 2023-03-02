@@ -1,15 +1,19 @@
 import React from 'react'
-import {useState, useEffect} from "react"
+import {useState, useEffect, useContext} from "react"
 import {getAllCategories} from "../data"
 import Event from '../components/Event';
+import { MyContextCategories } from "../context";
+
+
 
 function Sports() {
     const [category, setCategory] = useState([]);
+    const {eventType } = useContext(MyContextCategories)
 
-
+    console.log(eventType)
     useEffect(() => {
       const CategoryData = async () => {
-        const eventData = await getAllCategories("Sports");
+        const eventData = await getAllCategories(eventType);
         const allEvents = eventData._embedded.events
   
         const uniqueEvents = allEvents.reduce((accumulator, current) => {
@@ -20,16 +24,20 @@ function Sports() {
         }, []);
   
         setCategory(uniqueEvents);  
-        
       };
-      CategoryData()
-        
+      CategoryData()        
     }, []);
-console.log(category)
+
+
+const result = category.map((event, index) =>
+<Event key={index} event={event} />
+
+)
+const content = result?.length ? result : <article><p>Sorry, No Matching Events</p></article>
 
   return (
     <div>
-     <Event event={category} />
+    {content}
     </div>
   )
 }

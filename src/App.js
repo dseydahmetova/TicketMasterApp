@@ -8,6 +8,7 @@ import About from "./pages/About"
 import Nav from "./components/Nav"
 import { getAllEvents } from "./data"
 import { MyContext } from './context'
+import { MyContextCategories } from './context'
 import Footer from "./components/Footer";
 import Venue from "./pages/Venue";
 import Sports from "./pages/Sports"
@@ -17,6 +18,7 @@ import Concerts from "./pages/Concerts"
 function App() {
   const [event, setEvent] = useState([]);
   const [searchQuery, setSearchQuery] = useState([]);
+  const [eventType, setEventType] = useState('');
 
 
   useEffect(() => {
@@ -38,25 +40,27 @@ function App() {
       
   }, []);
 
- console.log(event)
+//  console.log(event)
   // console.log(searchQuery)
 
 
   return (
     <div className="App">
      <MyContext.Provider value={{event} }>
-      <Nav />
+     <MyContextCategories.Provider value={{eventType} }> 
+
+      <Nav eventType = {eventType} setEventType = {setEventType}/>
       <div>
         <Routes>
         <Route path="/venues" element={<Venue />} />
           <Route path="/about" element={<About />} />
           <Route path="/" element={<Eventboard searchQuery={searchQuery} setSearchQuery={setSearchQuery}/>} />
           <Route path="/events/:name" element={<EventDetails />} />
-          <Route path="/events/sports" element={<Sports />} />
-          <Route path="/events/concerts" element={<Concerts />} />
+          <Route path="/events/:type" element={<Sports />} />
         </Routes>
       </div>
       <Footer />
+      </MyContextCategories.Provider>
       </MyContext.Provider>
     </div>
   );

@@ -12,12 +12,14 @@ export async function getAllEvents() {
   return data;
 }
 
-export async function getAllCategories(type) {
+export async function getAllCategories(category) {
   const key = 'paBdVONZfprSreofrQSnKo4iCkCYpRB6'
   const response = await fetch(
-`https://app.ticketmaster.com/discovery/v2/events.json?segmentName=${type}&apikey=paBdVONZfprSreofrQSnKo4iCkCYpRB6`  );
+`https://app.ticketmaster.com/discovery/v2/events.json?segmentName=${category}&size=12&apikey=paBdVONZfprSreofrQSnKo4iCkCYpRB6` 
+ );
   const data = response.json();
   return data;
+
 }
 
 
