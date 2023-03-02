@@ -10,6 +10,8 @@ import { getAllEvents } from "./data"
 import { MyContext } from './context'
 import Footer from "./components/Footer";
 import Venue from "./pages/Venue";
+import Sports from "./pages/Sports"
+import Concerts from "./pages/Concerts"
 
 
 function App() {
@@ -50,6 +52,8 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/" element={<Eventboard searchQuery={searchQuery} setSearchQuery={setSearchQuery}/>} />
           <Route path="/events/:name" element={<EventDetails />} />
+          <Route path="/events/sports" element={<Sports />} />
+          <Route path="/events/concerts" element={<Concerts />} />
         </Routes>
       </div>
       <Footer />

@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link } from "react-router-dom"
 
+
 function Nav() {
+ 
   return (
 <nav className="navbar navbar-expand-lg nav">
   <div className="container-fluid">
@@ -32,8 +34,8 @@ function Nav() {
             Categories
           </Link>
           <ul className="dropdown-menu">
-          <Link  className="dropdown-item" to='/sports'>Sports</Link>
-            <Link className="dropdown-item" to="#">Concerts</Link>
+          <Link  className="dropdown-item" to='/events/sports'>Sports</Link>
+            <Link className="dropdown-item" to="/events/concerts">Concerts</Link>
             <Link className="dropdown-item" to="#">Something</Link>
           </ul>
         </li>

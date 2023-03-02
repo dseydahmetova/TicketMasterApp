@@ -7,7 +7,7 @@ const EventPage = ({ searchQuery }) => {
        
     )
 
-    const content = result?.length ? result : <article><p>No Matching Events</p></article>
+    const content = result?.length ? result : <article><p>Sorry, No Matching Events</p></article>
     return (
         <main>
             {content}

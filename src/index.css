@@ -62,7 +62,7 @@ body {
   transform: translateY(cac(-1 * var(--nav-height)));
 }
 
-eventimg {
+.eventimg {
   padding: 10px;
   border-radius: 10%; 
   margin-left: 10px;
