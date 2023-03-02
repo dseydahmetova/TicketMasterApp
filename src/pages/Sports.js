@@ -5,17 +5,15 @@ import Event from '../components/Event';
 import { MyContextCategories } from "../context";
 
 
-
 function Sports() {
     const [category, setCategory] = useState([]);
     const {eventType } = useContext(MyContextCategories)
 
-    console.log(eventType)
+    console.log("this is sport" + category)
     useEffect(() => {
       const CategoryData = async () => {
         const eventData = await getAllCategories(eventType);
         const allEvents = eventData._embedded.events
-  
         const uniqueEvents = allEvents.reduce((accumulator, current) => {
           if (!accumulator.find((item) => item.name === current.name)) {
             accumulator.push(current);
@@ -23,9 +21,11 @@ function Sports() {
           return accumulator;
         }, []);
   
-        setCategory(uniqueEvents);  
+        setCategory(uniqueEvents); 
+        
       };
-      CategoryData()        
+      CategoryData()  
+          
     }, []);
 
 

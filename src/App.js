@@ -56,7 +56,8 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/" element={<Eventboard searchQuery={searchQuery} setSearchQuery={setSearchQuery}/>} />
           <Route path="/events/:name" element={<EventDetails />} />
-          <Route path="/events/:type" element={<Sports />} />
+          <Route path="/events/sports" element={<Sports />} />
+          <Route path="/events/concerts" element={<Concerts />} />
         </Routes>
       </div>
       <Footer />
