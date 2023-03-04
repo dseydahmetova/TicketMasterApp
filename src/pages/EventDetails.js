@@ -2,6 +2,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useContext } from 'react';
 import { MyContext } from "../context";
 import { convertDate } from "../data";
+import { IoLogoChrome } from "react-icons/io5";
 
 function EventDetails() {
 
@@ -20,16 +21,16 @@ function EventDetails() {
       {event
         .filter((eventItem) => eventItem.name === name)
         .map((item, index) => (
-          <div key={index} className='detailCard'>
-            <img src={item.images[0].url} alt='' className='detailimg' />
-            <div className="detailContent">
-              <p className="title" key={item.id}>  {item.name}</p>
-              <p className="title" key={item.classifications[0].segment.id} >  {item.classifications[0].segment.name}/{item.classifications[0].genre.name}/{item.classifications[0].subGenre.name}</p>
-              {convertDate(`${item.dates.start.dateTime}`)}
-              Venue address: {item._embedded.venues[0].name}
+<div className="detail-content">
+            <div className="left-content">
+              <p className="eventTitle" key={item.id}>  {item.name}</p>
+              <p className="eventType" key={item.classifications[0].segment.id} >  {item.classifications[0].segment.name}/{item.classifications[0].genre.name}/{item.classifications[0].subGenre.name}</p>
+              <p className="eventTime">  {convertDate(`${item.dates.start.dateTime}`)}</p>
+            
+            <p className="eventTime">{item._embedded.venues[0].name}</p>
               {item._embedded.venues && (
-                <div className=" flex flex-col justify-center align-center text-left basis-1/3 m-2   p-1">
-                  {item._embedded.venues[0].address.line1}
+                <div className="eventAddress">
+                Venue address:  {item._embedded.venues[0].address.line1}
                   {" - "}
                   {item._embedded.venues[0].city.name}
                   {", "}
@@ -37,17 +38,33 @@ function EventDetails() {
                   {" ("}
                   {item._embedded.venues[0].country.countryCode}
                   {"). "}
-                </div>
+                </div> 
               )}
               {item._embedded.venues[0].generalInfo &&
                 <p className="content" >{item._embedded.venues[0].generalInfo.generalRule}
                 </p>}
+              </div>
+
+              <div className="right-content">
+              <div key={index} className='event-image'>
+            <img src={item.images[0].url} alt='eventimage' className='detailimg' />
+            </div>
+
+              
+              <div className="priceRange">
               {item.priceRanges && <p className="content" > ${item.priceRanges[0].min}-${item.priceRanges[0].max} {item.priceRanges[0].currency}</p>}
               {item.pleaseNote && <p className="content"> Please Note: {item.pleaseNote}</p>}
-              <a className="title" key={item.id} href={item.url}> <button>Buy Tickets</button></a>
-              <button onClick={goBack}>Back</button>
+</div>
+
+<div className="group-button">
+              <a key={item.id} href={item.url}> 
+              <button type="button" class="btn btn-outline-secondary buyButton evtBtn">Buy Tickets</button>
+              </a>
+              <button type="button" class="btn btn-outline-secondary viewButton evtBtn" onClick={goBack}>Back</button>
+              </div>
+
             </div>
-          </div>
+            </div>
         ))
       }
     </div>

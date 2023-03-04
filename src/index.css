@@ -2,8 +2,6 @@
 
 
 body {
-  /* background-color: rgb(4, 4, 4); */
-  color: rgb(18, 17, 17);
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -32,6 +30,19 @@ body {
   color: white;
 }
 
+.evtBtn{
+margin-left: 100px;
+width: 200px;
+height: 70px;
+font-size: 20px;
+}
+
+.priceRange{
+  text-align: center;
+  font-weight: bold;
+  font-size: 32px;
+  letter-spacing: 1px;
+}
 
 .viewButton:hover {
   background-color: #343935;
@@ -77,11 +88,91 @@ form {
   flex-direction: row;
 }
 
+.eventDetail{
+  /* text-align: center; */
+  top: 150px;
+width: 50%;
+/* height: 100%;
+padding: 30px; */
+position: relative;
+background-color: yellow; 
+}
 
+.detail-content{
+  background-color: pink;
+
+  /* position: absolute; */
+ padding: 30px;
+  display: grid;
+    grid-template-columns: repeat(2, 800px);
+    grid-auto-flow: row dense;
+    /* gap: 10px; */
+    /* justify-items: center; */
+    /* justify-content: center; */
+    /* place-items: center; */
+    /* left: 30%; */
+    /* top: 50%; */
+    /* margin: -50px 0 0 -50px; */
+    /* height: 300px;
+    width: 400px; */
+
+    width: 80%;
+    margin: 0 auto;
+}
+.content{
+  font-family: 'Bai Jamjuree', sans-serif;
+  font-size: 21px;
+}
 
 .detailCard {
   margin: 0;
   padding: 20px;
+  width: 600px;
+  background-color: rgb(203, 204, 233);
+
+}
+
+.detailimg{
+  width: 500px;
+  height: 450px;
+  margin-bottom: 40px;
+  border-radius: 10%;
+}
+
+.eventTitle{
+  font-family: "Segoe UI";
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 40px;
+    letter-spacing: 1px
+}
+
+.eventType{
+  font-family: "Segoe UI";
+  /* "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans" */
+  text-transform: uppercase;
+  font-size: 24px;
+  letter-spacing: 1px;
+  font-style: italic;
+  font-weight: bold;
+}
+.eventTime{
+  font-family: "Cantarell";
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.eventAddress{
+  font-family: 'Bai Jamjuree', sans-serif;
+  font-size: 22px;
+  letter-spacing: 1px;
+  text-decoration: underline;
+}
+
+.btn-group{
+  display: flex;
+  justify-content: space-between;
 }
 
 /* .dashboard {
@@ -121,15 +212,20 @@ form {
 }
 
 .footer {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   margin: 0;
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 80px;
-  background-color: #D0DAEE;
+  height: 80px;*/
+  background-color: #D0DAEE; 
+  position: absolute;
+  padding: 35px;
+  text-align: center;
+
+
 }
 
 .footer-text {
@@ -328,4 +424,10 @@ form {
   width: 40px;
   height: 30px;
   margin: 0;
+}
+
+btn-group{
+  display: flex;
+ margin-right: px;
+
 }
