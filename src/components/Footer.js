@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
 
-    <nav className="navbar bg-body-tertiary footer fixed-bottom">
+    <nav className="footer">
       <p className="footer-text">Copyright © {new Date().getFullYear()} - By continuing past this page, you agree to our
         Terms of Use.</p>
       <div>

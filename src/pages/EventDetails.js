@@ -43,20 +43,20 @@ function EventDetails() {
               {item._embedded.venues[0].generalInfo &&
                 <p className="content" >{item._embedded.venues[0].generalInfo.generalRule}
                 </p>}
+                {item.pleaseNote && <p className="content"> Please Note: {item.pleaseNote}</p>}
+
               </div>
 
               <div className="right-content">
-              <div key={index} className='event-image'>
             <img src={item.images[0].url} alt='eventimage' className='detailimg' />
-            </div>
+            
 
               
               <div className="priceRange">
               {item.priceRanges && <p className="content" > ${item.priceRanges[0].min}-${item.priceRanges[0].max} {item.priceRanges[0].currency}</p>}
-              {item.pleaseNote && <p className="content"> Please Note: {item.pleaseNote}</p>}
 </div>
 
-<div className="group-button">
+<div className="button-group">
               <a key={item.id} href={item.url}> 
               <button type="button" class="btn btn-outline-secondary buyButton evtBtn">Buy Tickets</button>
               </a>

@@ -10,7 +10,7 @@ function Eventboard({ searchQuery, setSearchQuery }) {
   const { event } = useContext(MyContext)
 
   return (
-    <div>
+    <div className='eventBoard'>
       <p className='welcomeMsg'> Shop millions of live events and discover can't-miss concerts, games, theater and more
       </p>
       <SearchForm event={event} setSearchQuery={setSearchQuery} />

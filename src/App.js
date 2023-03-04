@@ -47,7 +47,7 @@ function App() {
       <MyContext.Provider value={{ event }}>
         <MyContextCategories.Provider value={{ eventType }}>
           <Nav eventType={eventType} setEventType={setEventType} />
-          <div>
+        
             <Routes>
               <Route path="/venues" element={<Venue />} />
               <Route path="/about" element={<About />} />
@@ -56,7 +56,7 @@ function App() {
               <Route path="/events/Sports" element={<Sports />} />
               <Route path="/events/Music" element={<Concerts />} />
             </Routes>
-          </div>
+        
           <Footer />
         </MyContextCategories.Provider>
       </MyContext.Provider>
