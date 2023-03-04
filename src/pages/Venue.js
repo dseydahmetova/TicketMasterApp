@@ -1,14 +1,16 @@
-import React from 'react'
-import {useContext} from "react"
-import { MyContext } from '../context'
 import Carousel  from '../components/Carousel'
+import { Route, Routes } from "react-router-dom";
+import {venueData} from "../VenuesData"
 
 function Venue() {
-    const { event } = useContext(MyContext)
+    // const { event } = useContext(MyContext)
   return (
-    <div>
-    Hello
-       <Carousel event = {event}/>
+    <div className='venue'>
+  {/* <Routes> */}
+         
+      {/* <Route path="/venues/*" element={ */}
+          <Carousel venueData={venueData} />
+         {/* } />  </Routes> */}
     </div>
   )
 }
