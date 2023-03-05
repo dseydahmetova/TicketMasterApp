@@ -52,7 +52,7 @@ function EventDetails() {
 
 
               <div className="priceRange">
-                {item.priceRanges && <p className="content" > ${item.priceRanges[0].min}-${item.priceRanges[0].max} {item.priceRanges[0].currency}</p>}
+                {item.priceRanges && <p className="price-content" > ${item.priceRanges[0].min}-${item.priceRanges[0].max} {item.priceRanges[0].currency}</p>}
               </div>
 
               <div className="button-group">
