@@ -57,9 +57,9 @@ function EventDetails() {
 
               <div className="button-group">
                 <a key={item.id} href={item.url}>
-                  <button type="button" class="btn btn-outline-secondary buyButton evtBtn">Buy Tickets</button>
+                  <button type="button" className="btn btn-outline-secondary buyButton evtBtn">Buy Tickets</button>
                 </a>
-                <button type="button" class="btn btn-outline-secondary viewButton evtBtn" onClick={goBack}>Back</button>
+                <button type="button" className="btn btn-outline-secondary viewButton evtBtn" onClick={goBack}>Back</button>
               </div>
 
             </div>

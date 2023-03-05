@@ -10,7 +10,7 @@ function Nav({ setEventType }) {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg nav">
+    <nav className="navbar navbar-expand-lg nav bg-body-tertiary">
       <div className="container-fluid">
         <div className="logo">
           <Link to="/">
@@ -21,14 +21,9 @@ function Nav({ setEventType }) {
         </div>
         <div className="collapse navbar-collapse" id="navbarScroll">
           <ul className="navbar-nav me-auto my- my-lg-0 navbar-nav-scroll --bs-scroll-height: 100px;">
-            <li className="nav-item">
-              <Link className="nav-link" to='/venues'>
+           <li className="nav-item">
+            <Link className="nav-link" to='/venues'>
                 <div>Venue</div>
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to='/about'>
-                <div>About</div>
               </Link>
             </li>
             <li className="nav-item dropdown">
@@ -48,6 +43,16 @@ function Nav({ setEventType }) {
                 <option value="Sports">Sports</option>
                 <option value="Music"> Concerts</option>
               </select>
+            </li>
+            <li className="nav-item">
+            <Link className="nav-link" to='/help'>
+                <div>Help</div>
+              </Link>
+            </li>
+            <li className="nav-item signup">
+            <Link className="nav-link" to='/signUp'>
+                <div>Sign In</div>
+              </Link>
             </li>
           </ul>
         </div>

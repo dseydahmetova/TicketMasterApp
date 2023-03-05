@@ -5,10 +5,9 @@ html {
   box-sizing: border-box;
 }
 
-#body#body
- { 
+#body#body {
   background-color: rgb(255, 183, 3);
-  }
+}
 
 
 body {
@@ -35,13 +34,14 @@ main {
   background-color: #81c3d7;
 
 }
+
 .eventBoard {
   margin: 0;
   min-height: 100%;
   background-color: rgb(255, 183, 3);
 }
 
-.row{
+.row {
   background-color: #ffc971;
   box-shadow: 0 0 10px rgb(0, 0, 0, 0.3);
 }
@@ -103,7 +103,8 @@ main {
   background-color: white;
   color: black;
 }
-.App{
+
+.App {
   background-color: rgb(255, 183, 3);
 }
 
@@ -155,7 +156,7 @@ form {
 .carousel {
   width: 70%;
   height: 400px;
-  margin: 0 auto;
+  margin: 40px auto;
 }
 
 .carousel-caption {
@@ -171,8 +172,10 @@ form {
 }
 
 .venueDesc {
+  width: 70%;
+  height: 400px;
+  margin: 40px auto;
   font-size: 24px;
-  padding: 100px;
   margin-top: 30px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -202,7 +205,7 @@ form {
   font-size: 28px;
 }
 
-.content{
+.content {
   margin-top: 20px;
   font-family: 'Bai Jamjuree', sans-serif;
   font-size: 20px;
@@ -274,7 +277,9 @@ form {
   background-color: #9acddc;
 }
 
-.card-body,.card-text, .card-title {
+.card-body,
+.card-text,
+.card-title {
   font-size: 22px;
 }
 
@@ -292,7 +297,7 @@ select {
   color: rgb(248, 248, 248);
 }
 
-.sports{
+.sports {
   margin-top: 50px;
 }
 
@@ -470,8 +475,8 @@ select {
 
 .searchInput {
   width: 500px;
-	/* margin: auto; */
-	/* margin-top: 50px; */
+  /* margin: auto; */
+  /* margin-top: 50px; */
   display: block;
   width: 500px;
   padding: 0.375rem 0.75rem;
@@ -507,48 +512,109 @@ select {
 }
 
 .btnClean {
-  margin:0;
-padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
-.searchBox,.close-icon {
-	position: relative;
-	padding: 10px;
+.searchBox,
+.close-icon {
+  position: relative;
+  padding: 10px;
 }
 
 .searchInput:focus {
-	box-shadow: 0 0 15px 5px #c5c5ee;
-	border: 1px solid #bebede;
+  box-shadow: 0 0 15px 5px #c5c5ee;
+  border: 1px solid #bebede;
 }
+
 .close-icon {
-	border:1px solid transparent;
-	background-color: transparent;
-	display: inline-block;
-	vertical-align: middle;
+  border: 1px solid transparent;
+  background-color: transparent;
+  display: inline-block;
+  vertical-align: middle;
   outline: 0;
   cursor: pointer;
 }
+
 .close-icon:after {
-	content: "X";
-	display: block;
-	width: 30px;
-	height: 25px;
-	position: absolute;
-	background-color: #FA9595;
-	z-index:1;
-	right: 45px;
-	top: 0;
-	bottom: 0;
-	margin: auto;
-	padding: 2px;
-	border-radius: 50%;
-	text-align: center;
-	color: white;
-	font-weight: normal;
-	font-size: 12px;
-	cursor: pointer;
+  content: "X";
+  display: block;
+  width: 30px;
+  height: 25px;
+  position: absolute;
+  background-color: #FA9595;
+  z-index: 1;
+  right: 45px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  padding: 2px;
+  border-radius: 50%;
+  text-align: center;
+  color: white;
+  font-weight: normal;
+  font-size: 12px;
+  cursor: pointer;
 }
 
-.searchInput:not(:valid) ~ .close-icon {
-	display: none;
+.searchInput:not(:valid)~.close-icon {
+  display: none;
+}
+
+.signup {
+  float: right;
+  cursor: pointer;
+}
+
+.about{
+  text-align: center;
+  margin-top: 100px;
+}
+
+form{
+  width: 600vw;
+  max-width: 500px;
+  min-width: 300px;
+  margin: 0 auto;
+  padding-bottom: 5rem;
+  color: white;
+  font-family: "Arial";
+  font-size: 18px;
+}
+
+fieldset{
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  text-align: left;
+  margin: 1rem 1rem;
+}
+
+input, textarea, select {
+min-height: 3rem;
+width: 100%;
+}
+
+.formTextArea{
+  margin: 15px;
+}
+
+.inline {
+  width: unset;
+  margin: 0 0.5em 0 0;
+  vertical-align: middle;
+}
+
+input[type="submit"] {
+  display: block;
+  width: 140px;
+  margin: 1em auto;
+  height: 3em;
+  font-size: 1.1rem;
+  background-color: #777f77;
+  border-color: white;
+  min-width: 100px;
+  border: none;
 }

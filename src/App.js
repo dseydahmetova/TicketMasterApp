@@ -11,7 +11,7 @@ import Sports from "./pages/Sports"
 import Concerts from "./pages/Concerts"
 import EventDetails from "./pages/EventDetails"
 import Eventboard from "./pages/Eventboard"
-import About from "./pages/About"
+import Help from "./pages/Help"
 import Nav from "./components/Nav"
 
 
@@ -50,7 +50,7 @@ function App() {
         
             <Routes>
               <Route path="/venues" element={<Venue />} />
-              <Route path="/about" element={<About />} />
+              <Route path="/help" element={<Help />} />
               <Route path="/" element={<Eventboard searchQuery={searchQuery} setSearchQuery={setSearchQuery} />} />
               <Route path="/events/:name" element={<EventDetails />} />
               <Route path="/events/Sports" element={<Sports />} />
