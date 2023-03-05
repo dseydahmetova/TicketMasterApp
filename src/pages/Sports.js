@@ -34,7 +34,7 @@ function Sports() {
   const content = result?.length ? result : <article><p>Sorry, No Matching Events..</p></article>
 
   return (
-    <div>
+    <div className='sports'>
       {content}
     </div>
   )

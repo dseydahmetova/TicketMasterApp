@@ -2,7 +2,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useContext } from 'react';
 import { MyContext } from "../context";
 import { convertDate } from "../data";
-import { IoLogoChrome } from "react-icons/io5";
 
 function EventDetails() {
 
@@ -20,7 +19,7 @@ function EventDetails() {
     <div className="eventDetail">
       {event
         .filter((eventItem) => eventItem.name === name)
-        .map((item, index) => (
+        .map((item) => (
           <div className="detail-content">
             <div className="left-content">
               <p className="eventTitle" key={item.id}>  {item.name}</p>

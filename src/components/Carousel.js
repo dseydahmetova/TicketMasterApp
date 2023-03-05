@@ -2,7 +2,7 @@ function Carousel({ venueData }) {
 
   return (
     <>
-    <div id="carouselExampleInterval" className="carousel slide  carousel-dark" data-bs-ride="carousel">
+    <div className="carousel slide carousel-dark" data-bs-ride="carousel">
      <div className="carousel-inner">
 {venueData.map(item => (
   
@@ -31,7 +31,7 @@ function Carousel({ venueData }) {
 
    <div className="venueDesc">
    <p> Open Hours: "Monday - Saturday: 10:00am to 6:00pm </p>
-   <p>Sunday – Closed </p>
+   <p>Sunday: Closed </p>
   <p>The Box Office will be open at 10:00am daily or 90 minutes before the 1st performance of the day, whichever is earlier and will stay open until 8:00pm or 
   30 minutes after the last performance of the day begins, whichever is later. </p>
  <p>Payment: "Cash, American Express, Visa, MasterCard, Discover.</p>
