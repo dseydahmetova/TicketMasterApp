@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom'
 function Event({ event }) {
 
   return (
+
     <div className="card mb-3">
-      <div className="row g-2">
+      <div className="row g-0">
         <div className="col-md-4">
-          <img className="eventimg" src={event.images[0].url} alt='event img' />
+          <img className="eventimg img-fluid" src={event.images[0].url} alt='event img' />
         </div>
-        <div className="col-md-5">
+        <div className="col-md-4">
           <div className="card-body">
             <h5 className="card-title" key={event.id}>  {event.name}</h5>
             <p className="card-text" key={event.dateTime}>Date:{` `} {event.dates.start.localDate}</p>

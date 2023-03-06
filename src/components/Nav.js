@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from "react-router-dom"
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Nav({ setEventType }) {
-  
+
   const navigation = useNavigate();
 
   const handleChange = (event) => {
@@ -13,7 +13,7 @@ function Nav({ setEventType }) {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg nav bg-body-tertiary">
+  <nav className="navbar navbar-expand-lg nav">
       <div className="container-fluid">
         <div className="logo">
           <Link to="/">
@@ -22,8 +22,12 @@ function Nav({ setEventType }) {
             <h3>EventMaster</h3>
           </Link>
         </div>
-        <div className="collapse navbar-collapse" id="navbarScroll">
+        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="collapsibleNavbar">
           <ul className='navbar-nav ms-auto mb-2 mb-lg-0'>
+            {/* <div className='navbar-nav ms-auto mb-2 mb-lg-0'> */}
             <li className="nav-item dropdown">
 
               {/* The original Bootstrap Dropdown */}
@@ -48,32 +52,31 @@ function Nav({ setEventType }) {
                 <div>Venue</div>
               </Link>
             </li>
-            <div className='navbar-nav ms-auto mb-2 mb-lg-0'>
-              <li className="nav-item">
-                <Link className="nav-link" to='/cart'>
-                  <div>My Event</div>
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to='/help'>
-                  <div>Help</div>
-                </Link>
-              </li>
-              <li className="nav-item signup">
-                <Link className="nav-link" to='/signUp'>
-                  <div>Sign In
-                    <i className="bi bi-person-fill"></i>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-person-fill" viewBox="0 0 16 16">
-                      <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
-                    </svg>
-                  </div>
-                </Link>
-              </li>
-            </div>
+            <li className="nav-item">
+              <Link className="nav-link" to='/cart'>
+                <div>My Event</div>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to='/help'>
+                <div>Help</div>
+              </Link>
+            </li>
+            <li className="nav-item signup">
+              <Link className="nav-link" to='/signUp'>
+                <div>Sign In
+                  <i className="bi bi-person-fill"></i>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-person-fill" viewBox="0 0 16 16">
+                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+                  </svg>
+                </div>
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
+
   )
 }
 

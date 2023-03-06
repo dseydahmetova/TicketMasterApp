@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap/dist/js/bootstrap"
 import { Route, Routes } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useReducer } from "react";
 import { getAllEvents } from "./service/data"
 import { MyContextCategories, MyContext } from './service/context'
 import Footer from "./components/Footer";
@@ -33,7 +33,7 @@ function App() {
         }
         return accumulator;
       }, []);
-   
+
       setEvent(uniqueEvents);
       setSearchQuery(uniqueEvents)
     };
@@ -41,18 +41,19 @@ function App() {
 
   }, []);
 
- 
 
-//   useEffect(() => {
-//     const cartData = JSON.parse(localStorage.getItem('myEvent'));
-//     if (cartData) {
-//      setCart(cartData);
-//     }
-//   }, []);
 
-//   useEffect(() => {
-//   localStorage.setItem('myEvent', JSON.stringify(cart));
-//  }, [cart]);
+  useEffect(() => {
+    const cartData = JSON.parse(localStorage.getItem('myEvent'));
+    if (cartData) {
+      setCart(cartData);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('myEvent', JSON.stringify(cart));
+  }, [cart]);
+
   //  console.log(event)
 
   const handleChange = (eventName, count) => {
@@ -60,8 +61,8 @@ function App() {
       cart.flatMap((cartItem) =>
         cartItem.name === eventName
           ? cartItem.amount + count < 1
-          // remove item if amount will be less than 1
-            ? [] 
+            // remove item if amount will be less than 1
+            ? []
             : [
               {
                 ...cartItem,
@@ -90,7 +91,7 @@ function App() {
     setCart((cart) => [
       ...cart,
       //  initial amount 1
-      { ...item, amount: 1 } 
+      { ...item, amount: 1 }
     ]);
   };
 
