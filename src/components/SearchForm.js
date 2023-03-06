@@ -25,7 +25,7 @@ function SearchForm({ event, setSearchQuery }) {
     <nav className=" searchBar">
       <div className="container-fluid searchBox">
         <form onSubmit={handleSubmit} className="d-flex" role="search">
-          <input type="text" onChange={handleSearch} required className="me-3 searchInput" name="focus" placeholder="Search by name, state, segment, genre" aria-label="Search" />
+          <input type="text" onChange={handleSearch} required className="me-3 searchInput" name="focus" placeholder="Search by name, state, segment, genre" aria-label="Search" /> 
           <button className="close-icon" type="reset"></button>
           <button className="btn btn-outline search-button" type="submit"><i className="bi-search"></i>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">

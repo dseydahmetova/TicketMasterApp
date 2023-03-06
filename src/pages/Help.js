@@ -5,16 +5,16 @@ function Help() {
       <p className="formText"><i>Thank you for taking the time to help me improve the project </i></p>
       <form id="survey-form">
         <fieldset>
-          <label for="name">Name:
+          <label htmlFor="name">Name:
             <input id="name" type="text" required placeholder="Enter your name" />
           </label>
-          <label for="email">Email:
+          <label htmlFor="email">Email:
             <input id="email" type="email" required placeholder="Enter your email" />
           </label>
-          <label for="number">Age (optional):
+          <label htmlFor="number">Age (optional):
             <input id="number" type="number" min="13" max="100" placeholder="Enter your age" />
           </label>
-          <label for="dropdown">Which option best describes your current role?
+          <label htmlFor="dropdown">Which option best describes your current role?
             <select id="dropdown" >
               <option>Select current role</option>
               <option>Student</option>
@@ -24,7 +24,7 @@ function Help() {
             </select>
           </label>
 
-          <label for="dropdown">
+          <label htmlFor="dropdown">
             What would you like to see improved?
           </label>
           <div className="formTextArea">

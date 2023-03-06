@@ -1,10 +1,9 @@
 import { useNavigate, useParams } from "react-router-dom";
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { MyContext } from "../context";
 import { convertDate } from "../data";
 
-function EventDetails() {
-
+function EventDetails({handleAddToCart}) {
   let { name } = useParams();
   let { event } = useContext(MyContext)
   let navigate = useNavigate()
@@ -58,7 +57,10 @@ function EventDetails() {
               <div className="button-group">
                 <a key={item.id} href={item.url}>
                   <button type="button" className="btn btn-outline-secondary buyButton evtBtn">Buy Tickets</button>
-                </a>
+                </a> 
+                <button name="Add to cart" className="product__btn" 
+          onClick={() => handleAddToCart(item)}> Add to My event </button>
+
                 <button type="button" className="btn btn-outline-secondary viewButton evtBtn" onClick={goBack}>Back</button>
               </div>
 

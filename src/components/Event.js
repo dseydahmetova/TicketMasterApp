@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 
-function Event({ event }) {
+function Event({ event}) {
+
   return (
     <div className="card mb-3">
       <div className="row g-2">
@@ -16,14 +17,18 @@ function Event({ event }) {
           </div>
         </div>
         <div className="col-md-3 group-button">
-          <a className="title" href={event.url}><button className='buyButton btn btn-secondary'>Buy Tickets</button></a>
+          <a className="title" href={event.url}>
+          <button className='buyButton btn btn-secondary'>Buy Tickets</button>
+          </a>
           <Link to={`/events/${event.name}`}>
             <button className='viewButton btn btn-secondary'>View Event</button>
           </Link>
+         
         </div>
       </div>
     </div>
   )
 }
+
 
 export default Event
