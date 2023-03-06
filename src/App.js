@@ -2,9 +2,8 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap/dist/js/bootstrap"
 import { Route, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { getAllEvents } from "./data"
-import { MyContext } from './context'
-import { MyContextCategories } from './context'
+import { getAllEvents } from "./service/data"
+import { MyContextCategories, MyContext } from './service/context'
 import Footer from "./components/Footer";
 import Venue from "./pages/Venue";
 import Sports from "./pages/Sports"
@@ -21,7 +20,6 @@ function App() {
   const [searchQuery, setSearchQuery] = useState([]);
   const [eventType, setEventType] = useState('');
   const [cart, setCart] = useState([]);
-
 
   useEffect(() => {
     const EventsData = async () => {
@@ -43,33 +41,34 @@ function App() {
   }, []);
 
   //  console.log(event)
-  
-  const handleChange = (eventName, d) => {
+
+  const handleChange = (eventName, count) => {
     setCart((cart) =>
       cart.flatMap((cartItem) =>
         cartItem.name === eventName
-          ? cartItem.amount + d < 1
-            ? [] // <-- remove item if amount will be less than 1
+          ? cartItem.amount + count < 1
+          // remove item if amount will be less than 1
+            ? [] 
             : [
-                {
-                  ...cartItem,
-                  amount: cartItem.amount + d
-                }
-              ]
+              {
+                ...cartItem,
+                amount: cartItem.amount + count
+              }
+            ]
           : [cartItem]
       )
     );
   };
-  
+
   const handleAddToCart = (item) => {
     if (cart.some((cartItem) => cartItem.name === item.name)) {
       setCart((cart) =>
         cart.map((cartItem) =>
           cartItem.name === item.name
             ? {
-                ...cartItem,
-                amount: cartItem.amount + 1
-              }
+              ...cartItem,
+              amount: cartItem.amount + 1
+            }
             : cartItem
         )
       );
@@ -77,7 +76,8 @@ function App() {
     }
     setCart((cart) => [
       ...cart,
-      { ...item, amount: 1 } // <-- initial amount 1
+      //  initial amount 1
+      { ...item, amount: 1 } 
     ]);
   };
 
@@ -88,18 +88,18 @@ function App() {
       <MyContext.Provider value={{ event }}>
         <MyContextCategories.Provider value={{ eventType }}>
           <Nav eventType={eventType} setEventType={setEventType} />
-        
-            <Routes>
-              <Route path="/" element={<Eventboard searchQuery={searchQuery} setSearchQuery={setSearchQuery} />} />
-              <Route path="/events/:name" element={<EventDetails handleAddToCart={handleAddToCart}/>} />
-              <Route path="/events/Sports" element={<Sports />} />
-              <Route path="/events/Music" element={<Concerts />} />
-              <Route path="/venues" element={<Venue />} />
-              <Route path="/help" element={<Help />} />
-              <Route path="/signUp" element={<SignPage />} />
-              <Route path="/cart" element={<Cart cart={cart} setCart={setCart} handleChange={handleChange}/>} />
-            </Routes>
-        
+
+          <Routes>
+            <Route path="/" element={<Eventboard searchQuery={searchQuery} setSearchQuery={setSearchQuery} />} />
+            <Route path="/events/:name" element={<EventDetails handleAddToCart={handleAddToCart} />} />
+            <Route path="/events/Sports" element={<Sports />} />
+            <Route path="/events/Music" element={<Concerts />} />
+            <Route path="/venues" element={<Venue />} />
+            <Route path="/help" element={<Help />} />
+            <Route path="/signUp" element={<SignPage />} />
+            <Route path="/cart" element={<Cart cart={cart} setCart={setCart} handleChange={handleChange} />} />
+          </Routes>
+
           <Footer />
         </MyContextCategories.Provider>
       </MyContext.Provider>

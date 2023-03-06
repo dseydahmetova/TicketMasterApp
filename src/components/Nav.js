@@ -21,12 +21,8 @@ function Nav({ setEventType }) {
         </div>
         <div className="collapse navbar-collapse" id="navbarScroll">
           <ul className='navbar-nav ms-auto mb-2 mb-lg-0'>
-           <li className="nav-item">
-            <Link className="nav-link" to='/venues'>
-                <div>Venue</div>
-              </Link>
-            </li>
             <li className="nav-item dropdown">
+
               {/* The original Bootstrap Dropdown */}
               {/* <Link className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Categories
@@ -44,27 +40,32 @@ function Nav({ setEventType }) {
                 <option value="Music"> Concerts</option>
               </select>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to='/venues'>
+                <div>Venue</div>
+              </Link>
+            </li>
             <div className='navbar-nav ms-auto mb-2 mb-lg-0'>
-            <li className="nav-item">
-            <Link className="nav-link" to='/cart'>
-                <div>My Events</div>
-              </Link>
-            </li>
-            <li className="nav-item">
-            <Link className="nav-link" to='/help'>
-                <div>Help</div>
-              </Link>
-            </li>
-            <li className="nav-item signup">
-            <Link className="nav-link" to='/signUp'>
-                <div>Sign In
-                <i className="bi bi-person-fill"></i>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-person-fill" viewBox="0 0 16 16">
-  <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
-</svg>
-</div>
-              </Link>
-            </li>
+              <li className="nav-item">
+                <Link className="nav-link" to='/cart'>
+                  <div>My Event</div>
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to='/help'>
+                  <div>Help</div>
+                </Link>
+              </li>
+              <li className="nav-item signup">
+                <Link className="nav-link" to='/signUp'>
+                  <div>Sign In
+                    <i className="bi bi-person-fill"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-person-fill" viewBox="0 0 16 16">
+                      <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+                    </svg>
+                  </div>
+                </Link>
+              </li>
             </div>
           </ul>
         </div>

@@ -1,5 +1,5 @@
 import Carousel  from '../components/Carousel'
-import {venueData} from "../VenuesData"
+import {venueData} from "../service/VenuesData"
 
 function Venue() {
     // const { event } = useContext(MyContext)

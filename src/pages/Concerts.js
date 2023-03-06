@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from "react"
-import { getAllCategories } from "../data"
+import { getAllCategories } from "../service/data"
 import Event from '../components/Event';
 
 function Concerts() {

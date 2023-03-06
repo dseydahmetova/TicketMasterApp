@@ -517,8 +517,8 @@ select {
   padding: 0;
 }
 
-.d-flex{
-  padding:30px;
+.d-flex {
+  padding: 30px;
   width: 100%;
 }
 
@@ -572,12 +572,12 @@ select {
   cursor: pointer;
 }
 
-.about{
+.about {
   text-align: center;
   margin-top: 100px;
 }
 
-form{
+form {
   width: 600vw;
   max-width: 500px;
   min-width: 300px;
@@ -588,7 +588,7 @@ form{
   font-size: 18px;
 }
 
-fieldset{
+fieldset {
   display: flex;
   flex-direction: column;
 }
@@ -598,12 +598,14 @@ label {
   margin: 1rem 1rem;
 }
 
-input, textarea, select {
-min-height: 3rem;
-width: 100%;
+input,
+textarea,
+select {
+  min-height: 3rem;
+  width: 100%;
 }
 
-.formTextArea{
+.formTextArea {
   margin: 15px;
 }
 
@@ -625,7 +627,7 @@ input[type="submit"] {
   border: none;
 }
 
-.SignUpform{
+.SignUpform {
   background-color: white;
   border-radius: 5px;
   width: 550px;
@@ -633,25 +635,25 @@ input[type="submit"] {
   padding: 20px;
 }
 
-.signImg{
+.signImg {
   border-radius: 10px;
-width: 400px;
-height: 450px;
+  width: 400px;
+  height: 450px;
 }
 
-.signLeftContent{
+.signLeftContent {
   position: relative;
   color: #f9f9fb;
   font-weight: bold;
 }
 
-.imgText{
-position: absolute;
-top: 8px;
+.imgText {
+  position: absolute;
+  top: 8px;
   left: 16px;
 }
 
-.Signform{
+.Signform {
   background-color: #f3c34a;
   border-radius: 5px;
   min-width: 650px;
@@ -659,39 +661,72 @@ top: 8px;
   height: 500px;
   margin: 100px auto;
   padding: 20px;
- border: solid 1px;
- display: flex;
- align-items: center;
- gap: 30px;
+  border: solid 1px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
 }
 
-.form-body{
+.form-body {
   text-align: left;
   padding: 20px 10px;
 }
 
-.form-body > *{
+.form-body>* {
   padding: 5px;
 }
 
-.form__label{
+.form__label {
   width: 40%;
 }
 
-.form_input{
+.form_input {
   width: 60%;
 }
 
-.signBtn{
+.signBtn {
   margin-top: 20px;
 }
 
-.signupBtn{
+.signupBtn {
   text-align: center;
 }
 
-.bi-person-fill{
+.bi-person-fill {
   margin-left: 5px;
-width: 20px;
-height: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.myEvent{
+  display: flex;
+  flex-direction: row;
+justify-content: baseline;
+}
+
+.cart-box{
+  margin: 30px;
+  padding-top: 30px;
+  background-color: #e07a5f;
+  text-align: center;
+  width: 550px;
+  height: 200px;
+}
+
+.myEventbtn{
+  width: 100px;
+  height: 50px;
+  background-color: rgb(255, 183, 3);
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.total{
+  font-size: 28px;
+  font-weight: bold;
+  color: rgb(81, 7, 7);
+  text-align: center;
+  margin-bottom: 30px;
 }

@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState, useEffect, useContext } from "react"
-import { getAllCategories } from "../data"
+import { getAllCategories } from "../service/data"
 import Event from '../components/Event';
-import { MyContextCategories } from "../context";
+import { MyContextCategories } from "../service/context";
 
 
 function Sports() {
