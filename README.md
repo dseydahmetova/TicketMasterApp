@@ -39,7 +39,7 @@ This app is a work in progress, here is some stuff left to do:
 
 **Screenshots:**
 * main page
-![main page]()
+![main page](https://github.com/dseydahmetova/TicketMasterApp/blob/main/src/components/readme.JPG?raw=true)
 
 ## Author
 👤 Dana Seidakhmetova
