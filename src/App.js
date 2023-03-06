@@ -13,7 +13,7 @@ import Eventboard from "./pages/Eventboard"
 import Help from "./pages/Help"
 import Nav from "./components/Nav"
 import SignPage from "./pages/SignPage"
-import Cart from "./components/Cart";
+import Cart from "./pages/Cart";
 
 function App() {
   const [event, setEvent] = useState([]);

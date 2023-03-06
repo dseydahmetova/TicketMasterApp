@@ -1,4 +1,4 @@
-import Event from "./Event";
+import Event from "../components/Event";
 function Cart({ cart, setCart, handleChange }) {
 
   const handleRemove = (name) => {
