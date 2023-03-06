@@ -9,7 +9,6 @@ function Nav({ setEventType }) {
   const handleChange = (event) => {
     const type = event.target.value
     setEventType(type);
-    // window.open(`/events/${type}`);
     navigation(`/events/${type}`)
   };
 

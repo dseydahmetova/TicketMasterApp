@@ -21,6 +21,7 @@ function App() {
   const [eventType, setEventType] = useState('');
   const [cart, setCart] = useState([]);
 
+
   useEffect(() => {
     const EventsData = async () => {
       const eventData = await getAllEvents();
@@ -32,7 +33,7 @@ function App() {
         }
         return accumulator;
       }, []);
-
+   
       setEvent(uniqueEvents);
       setSearchQuery(uniqueEvents)
     };
@@ -40,6 +41,18 @@ function App() {
 
   }, []);
 
+ 
+
+//   useEffect(() => {
+//     const cartData = JSON.parse(localStorage.getItem('myEvent'));
+//     if (cartData) {
+//      setCart(cartData);
+//     }
+//   }, []);
+
+//   useEffect(() => {
+//   localStorage.setItem('myEvent', JSON.stringify(cart));
+//  }, [cart]);
   //  console.log(event)
 
   const handleChange = (eventName, count) => {

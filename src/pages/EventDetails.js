@@ -20,7 +20,7 @@ function EventDetails({ handleAddToCart }) {
         .filter((eventItem) => eventItem.name === name)
         .map((item, index) => (
           <div className="detail-content">
-            <div className="left-content">
+            <div className="left-content" key = {item.classifications[0].genre.name}>
               <p className="eventTitle" key={index}>  {item.name}</p>
               <p className="eventType" key={item.classifications[0].segment.id} >  {item.classifications[0].segment.name}/{item.classifications[0].genre.name}/{item.classifications[0].subGenre.name}</p>
               <p className="eventTime" key = {item.dates.start.dateTime}>  {convertDate(`${item.dates.start.dateTime}`)}</p>
@@ -45,7 +45,7 @@ function EventDetails({ handleAddToCart }) {
             </div>
             <div className="right-content" key={item.images[0].url}>
               <img src={item.images[0].url} alt='eventimage' className='detailimg' />
-              <div className="priceRange">
+              <div className="priceRange" key  = {item.priceRanges[0].max}>
                 {item.priceRanges && <p className="price-content" key = {item.priceRanges[0].min}> ${item.priceRanges[0].min}-${item.priceRanges[0].max} {item.priceRanges[0].currency}</p>}
               </div>
               <div className="button-group" key={item.url}>
