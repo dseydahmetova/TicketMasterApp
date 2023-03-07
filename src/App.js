@@ -15,14 +15,24 @@ import Nav from "./components/Nav"
 import SignPage from "./pages/SignPage"
 import Cart from "./pages/Cart";
 
+const cartData = JSON.parse(localStorage.getItem('myEvent') || "[]");
+
 function App() {
   const [event, setEvent] = useState([]);
   const [searchQuery, setSearchQuery] = useState([]);
   const [eventType, setEventType] = useState('');
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(cartData)
 
+  localStorage.setItem('myEvent', JSON.stringify(cart))
 
   useEffect(() => {
+    // localStorage.setItem('myEvent', JSON.stringify(cart))
+    //   const cartData = JSON.parse(localStorage.getItem('myEvent'));
+    // if (cartData) {
+    //   console.log(cartData)
+    //   setCart(cartData);
+    // }
+
     const EventsData = async () => {
       const eventData = await getAllEvents();
       const allEvents = eventData._embedded.events
@@ -38,21 +48,7 @@ function App() {
       setSearchQuery(uniqueEvents)
     };
     EventsData()
-
   }, []);
-
-
-
-  useEffect(() => {
-    const cartData = JSON.parse(localStorage.getItem('myEvent'));
-    if (cartData) {
-      setCart(cartData);
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem('myEvent', JSON.stringify(cart));
-  }, [cart]);
 
   //  console.log(event)
 
@@ -73,6 +69,7 @@ function App() {
       )
     );
   };
+
 
   const handleAddToCart = (item) => {
     if (cart.some((cartItem) => cartItem.name === item.name)) {
@@ -95,7 +92,7 @@ function App() {
     ]);
   };
 
-  // console.log(cart)
+
 
   return (
     <div className="App">

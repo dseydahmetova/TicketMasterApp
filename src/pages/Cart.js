@@ -1,6 +1,7 @@
 import Event from "../components/Event";
-function Cart({ cart, setCart, handleChange }) {
 
+function Cart({ cart, setCart, handleChange }) {
+  
   const handleRemove = (name) => {
     setCart((cart) => cart.filter((item) => item.name !== name));
   };
