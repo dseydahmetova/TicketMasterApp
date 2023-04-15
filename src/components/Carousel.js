@@ -8,9 +8,9 @@ function Carousel({ venueData }) {
             <div className="carousel-item active" key={item.id}>
               <img key={item.images} src={item.images} className="d-block w-100" alt="..." />
               <div className=" carousel-caption d-none d-md-block" key={item.id}>
-                <p className="venueTitle" key={item.name}>{item.name}</p>
+                {/* <p className="venueTitle" key={item.name}>{item.name}</p>
                 <p className="bottom" key={item.address}>{item.address} </p>
-                <p className="bottom" key={item.postalCode}> {item.city}{' '}/{' '}{item.state}{' '}/{' '}{item.country} {' '} {item.postalCode}</p>
+                <p className="bottom" key={item.postalCode}> {item.city}{' '}/{' '}{item.state}{' '}/{' '}{item.country} {' '} {item.postalCode}</p> */}
               </div>
             </div>
           )
