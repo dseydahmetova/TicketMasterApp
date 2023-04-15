@@ -26,7 +26,7 @@ git commit
 ```
 ### Programming Language : `HTML, CSS, Java Script, React`
 ### Built with: `Visual Studio`
-### Live Demo: https://ticketmaster-api-app.netlify.app/
+### Live Demo: 
 
 
 ### Missing work
